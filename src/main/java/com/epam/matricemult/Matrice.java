@@ -36,4 +36,8 @@ public class Matrice {
     public int getColumnNumber(){
         return columnUmber;
     }
+
+    public int getElementFromArray(int row, int column){
+        return matriceArray[row][column];
+    }
 }
