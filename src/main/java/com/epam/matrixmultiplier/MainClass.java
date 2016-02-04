@@ -1,4 +1,4 @@
-package com.epam.matricemult;
+package com.epam.matrixmultiplier;
 
 /**
  * Created by Kairat Dos on 02/02/2016.

@@ -1,4 +1,4 @@
-package com.epam.matricemult;
+package com.epam.matrixmultiplier;
 
 
 public class Matrix implements Multiplier {
