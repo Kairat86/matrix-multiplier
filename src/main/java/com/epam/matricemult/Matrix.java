@@ -1,43 +1,43 @@
 package com.epam.matricemult;
 
-/**
- * Created by Kairat Dos on 02/02/2016.
- */
-public class Matrix {
 
-    private int[][] matriceArray;
+public class Matrix implements Multiplier {
+
+    private int[][] values;
     private int rowNumber;
-    private int columnUmber;
+    private int columnNumber;
 
-    public Matrix(String data){
+    public Matrix() {
 
-        constructMatriceArray(data);
     }
 
-    public Matrix(int[][] arrayForMatr){
-        this.matriceArray=arrayForMatr;
+    public Matrix multiply(Matrix matrix) {
+        //Some code
+        return new Matrix();
     }
 
-    private void constructMatriceArray(String data) {
-         rowNumber=data.split(";").length;  //getting number of rows
-         columnUmber=data.split(";")[0].split(",").length; //getting number of columns for matriceArray
-        matriceArray=new int[columnUmber][rowNumber]; //initializing the capacity of an array
-        for(int row=0;row<rowNumber;row++){
-            for(int column=0;column<columnUmber;column++){
-                matriceArray[row][column]=Integer.parseInt(data.split(";")[row].split(",")[column]);
-            }
-        }
-    }
 
-    public int getRowNumber(){
+
+//    private void constructMatriceArray(String data) {
+//        rowNumber = data.split(";").length;  //getting number of rows
+//        columnNumber = data.split(";")[0].split(",").length; //getting number of columns for matriceArray
+//        matriceArray = new int[columnNumber][rowNumber]; //initializing the capacity of an array
+//        for (int row = 0; row < rowNumber; row++) {
+//            for (int column = 0; column < columnNumber; column++) {
+//                matriceArray[row][column] = Integer.parseInt(data.split(";")[row].split(",")[column]);
+//            }
+//        }
+//    }
+
+    public int getRowNumber() {
         return rowNumber;
     }
 
-    public int getColumnNumber(){
-        return columnUmber;
+    public int getColumnNumber() {
+        return columnNumber;
     }
 
-    public int getElementFromArray(int row, int column){
-        return matriceArray[row][column];
+    public int getElementFromArray(int row, int column) {
+        return values[row][column];
     }
 }
