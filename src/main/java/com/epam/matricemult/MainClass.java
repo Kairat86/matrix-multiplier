@@ -13,7 +13,7 @@ public class MainClass {
      Kolichestvo stolbcov pervoy matrcici doljno bit ravno kolichestvu strok vtoroy
     */
     public static void main(String[] args) {
-        System.out.println("Matrice multiplier started");
+        System.out.println("Matrix multiplier started");
         if(args[0].split(";")[0].split(",")!=args[1].split(";")){  //Proveryaem chto Kolichestvo stolbcov pervoy matrcici ravno kolichestvu strok vtoroy
             System.out.println("Kolichestvo stolbcov pervoy matrcici doljno bit ravno kolichestvu strok vtoroy!!!");
         return;
@@ -28,9 +28,9 @@ public class MainClass {
             }
         }
 
-        Matrice m1=new Matrice(args[0]);
-        Matrice m2=new Matrice(args[1]);
-        Matrice resultMatr=new Matrice(Multiplier.multiply(m1,m2));
+        Matrix m1=new Matrix(args[0]);
+        Matrix m2=new Matrix(args[1]);
+        Matrix resultMatr=new Matrix(Multiplier.multiply(m1,m2));
 
     }
 }

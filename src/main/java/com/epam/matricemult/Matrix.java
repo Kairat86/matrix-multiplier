@@ -3,18 +3,18 @@ package com.epam.matricemult;
 /**
  * Created by Kairat Dos on 02/02/2016.
  */
-public class Matrice {
+public class Matrix {
 
     private int[][] matriceArray;
     private int rowNumber;
     private int columnUmber;
 
-    public Matrice(String data){
+    public Matrix(String data){
 
         constructMatriceArray(data);
     }
 
-    public Matrice(int[][] arrayForMatr){
+    public Matrix(int[][] arrayForMatr){
         this.matriceArray=arrayForMatr;
     }
 
