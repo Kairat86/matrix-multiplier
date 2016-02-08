@@ -1,33 +1,53 @@
 package com.epam.matrixmultiplier;
 
 
+import java.util.Random;
+
 public class Matrix implements Multiplier {
 
     private int[][] values;
     private int rowNumber;
     private int columnNumber;
 
-    public Matrix() {
+    public Matrix(int[][] values) {
+        this.rowNumber = values.length;
+        this.columnNumber = values[0].length;
+        this.values = values;
+    }
+
+    public Matrix(int rowNumber, int columnNumber) {
+        this.rowNumber = rowNumber;
+        this.columnNumber = columnNumber;
+        this.values = new int[rowNumber][columnNumber];
+        generateRandomMatrixArray(rowNumber, columnNumber);
+    }
+
+    private static final int MATRIX_ELEMENT_MAX_VALUE = 100;
+
+    private void generateRandomMatrixArray(int rowNumber, int columnNumber) {
+        Random rand = new Random();
+        for (int row = 0; row < rowNumber; row++) {
+            for (int column = 0; column < columnNumber; column++) {
+                values[row][column] = rand.nextInt(MATRIX_ELEMENT_MAX_VALUE + 1);
+            }
+        }
 
     }
+
 
     public Matrix multiply(Matrix matrix) {
-        //Some code
-        return new Matrix();
+
+        int[][] multiplicationResult = new int[this.rowNumber][matrix.getColumnNumber()];
+        for (int row = 0; row < this.rowNumber; row++) {
+            for (int column = 0; column < this.columnNumber; column++) {
+                for (int k = 0; k < this.getColumnNumber(); k++) {
+                    multiplicationResult[row][column] += this.values[row][k] * matrix.getElementFromArray(k, column);
+                }
+            }
+        }
+        return new Matrix(multiplicationResult);
     }
 
-
-
-//    private void constructMatriceArray(String data) {
-//        rowNumber = data.split(";").length;  //getting number of rows
-//        columnNumber = data.split(";")[0].split(",").length; //getting number of columns for matriceArray
-//        matriceArray = new int[columnNumber][rowNumber]; //initializing the capacity of an array
-//        for (int row = 0; row < rowNumber; row++) {
-//            for (int column = 0; column < columnNumber; column++) {
-//                matriceArray[row][column] = Integer.parseInt(data.split(";")[row].split(",")[column]);
-//            }
-//        }
-//    }
 
     public int getRowNumber() {
         return rowNumber;
