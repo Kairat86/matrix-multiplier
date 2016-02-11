@@ -5,9 +5,11 @@ import java.util.Random;
 
 public class Matrix implements Multiplier {
 
+    private static final int MATRIX_ELEMENT_MAX_VALUE = 100;
     private int[][] values;
     private int rowNumber;
     private int columnNumber;
+
 
     public Matrix(int[][] values) {
         this.rowNumber = values.length;
@@ -22,7 +24,6 @@ public class Matrix implements Multiplier {
         generateRandomMatrixArray(rowNumber, columnNumber);
     }
 
-    private static final int MATRIX_ELEMENT_MAX_VALUE = 100;
 
     private void generateRandomMatrixArray(int rowNumber, int columnNumber) {
         Random rand = new Random();
